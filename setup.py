@@ -15,8 +15,8 @@ if sys.version_info < (2, 6):
 setup(
     name = "mongo_copier",
     version = "1.0",
-    author = "wangwei207209",
-    author_email = "wangwei207209@sogou-inc.com",
+    author = "winway",
+    author_email = "winway1988@163.com",
     description = ("Copy MongoDB collections from one mongod to another."),
     license = "BSD",
     keywords = "mongodb copy",
