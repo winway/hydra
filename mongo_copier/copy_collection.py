@@ -93,8 +93,8 @@ def main():
     # parse command-line options
     import argparse
     parser = argparse.ArgumentParser(description='Copy collections from one mongod to another. demo:\n'
-                                                 'mongo_copier --srchost 10.149.40.42 --srcport 1234 '
-                                                 '--desthost 10.153.58.50 --destport 5678 --destuser write --destpwd write '
+                                                 'mongo_copier --srchost 192.168.37.12 --srcport 1234 '
+                                                 '--desthost 192.168.37.14 --destport 5678 --destuser write --destpwd write '
                                                  '--manifests /tmp/1.txt --restart --drop',
                                      formatter_class=argparse.RawTextHelpFormatter)
     parser.add_argument(
@@ -136,23 +136,23 @@ def main():
              'copy a collection with change destination database or collection name\n'
              '  dbname.colname newdbname.newcolname\n'
              'copy a collection with query\n'
-             '  dbname.colname {"aid":{"$in":[123,456]}}\n'
+             '  dbname.colname {"id":{"$in":[123,456]}}\n'
              'copy all collections of a database\n'
              '  dbname.*\n'
              'copy all collections of a database with change destination database name\n'
              '  dbname.* newdbname.*\n'
              'copy all collections of a database with query\n'
-             '  dbname.* {"aid":{"$in":[123,456]}}\n'
+             '  dbname.* {"id":{"$in":[123,456]}}\n'
              'copy the collection of all databases\n'
              '  *.dbname\n'
              'copy the collection of all databases with change destination collection name\n'
              '  *.dbname *.newdbname\n'
              'copy the collection of all databases with query\n'
-             '  *.dbname {"aid":{"$in":[123,456]}}\n'
+             '  *.dbname {"id":{"$in":[123,456]}}\n'
              'copy all collections of all databases\n'
              '  *.*\n'
              'copy all collections of all databases with query\n'
-             '  *.* {"aid":{"$in":[123,456]}}\n')
+             '  *.* {"id":{"$in":[123,456]}}\n')
     args = parser.parse_args()
 
     log.debug(args)
