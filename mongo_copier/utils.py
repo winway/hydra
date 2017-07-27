@@ -113,7 +113,7 @@ def parse_manifests_file(args):
     srchost
     srcport
     srcuser: default read
-    srcpwd: default Bizdev_readonly
+    srcpwd: default read
     srcdb
     srccol
     desthost
@@ -142,7 +142,7 @@ def parse_manifests_file(args):
 
             log.debug("raw manifests: %s.%s -> %s.%s [%s]" % (srcdb, srccol, destdb, destcol, query))
 
-            for manifest in generate_manifests(args.srchost, args.srcport, "read", "Bizdev_readonly",
+            for manifest in generate_manifests(args.srchost, args.srcport, "read", "read",
                                                args.desthost, args.destport, args.destuser, args.destpwd,
                                                srcdb=srcdb, srccol=srccol, destdb=destdb, destcol=destcol, query=query):
                 manifests.append(manifest)

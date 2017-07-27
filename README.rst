@@ -2,7 +2,7 @@ Copy collections from one mongod to another.
 ============================================
 **demo:**
 
-``mongo_copier --srchost 10.149.40.42 --srcport 1234 --desthost 10.153.58.50 --destport 5678 --destuser write --destpwd write --manifests /tmp/1.txt --restart --drop``
+``mongo_copier --srchost 192.168.37.12 --srcport 1234 --desthost 10.192.168.37.14 --destport 5678 --destuser write --destpwd write --manifests /tmp/1.txt --restart --drop``
 
 *optional arguments:*
   -h, --help           show this help message and exit
@@ -24,20 +24,20 @@ Copy collections from one mongod to another.
     copy a collection with change destination database or collection name
       dbname.colname newdbname.newcolname
     copy a collection with query
-      dbname.colname {"aid":{"$in":[123,456]}}
+      dbname.colname {"id":{"$in":[123,456]}}
     copy all collections of a database
       dbname.*
     copy all collections of a database with change destination database name
       dbname.* newdbname.*
     copy all collections of a database with query
-      dbname.* {"aid":{"$in":[123,456]}}
+      dbname.* {"id":{"$in":[123,456]}}
     copy the collection of all databases
       \*.dbname
     copy the collection of all databases with change destination collection name
       \*.dbname \*.newdbname
     copy the collection of all databases with query
-      \*.dbname {"aid":{"$in":[123,456]}}
+      \*.dbname {"id":{"$in":[123,456]}}
     copy all collections of all databases
       \*.\*
     copy all collections of all databases with query
-      \*.\* {"aid":{"$in":[123,456]}}
+      \*.\* {"id":{"$in":[123,456]}}
